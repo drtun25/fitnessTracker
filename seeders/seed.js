@@ -1,3 +1,11 @@
+let mongoose = require("mongoose");
+let db = require("../models");
+
+mongoose.connect("mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
+
 async function initWorkout() {
     const lastWorkout = await API.getLastWorkout();
     console.log("Last workout:", lastWorkout);
